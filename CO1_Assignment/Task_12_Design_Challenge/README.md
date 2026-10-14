@@ -1,0 +1,6 @@
+# Task 12 — Day-4 Design Challenge
+Required rate: 50,000 requests/hour = 50,000 / 3,600 ≈ 13.89 requests/second on average. If evenly distributed, this is 1,200,000 requests/day. A one-million-record database plus one daily batch of new records makes lookup throughput more important than the daily insert cost, though peak traffic may greatly exceed the average.
+
+At n=1,000,000, a linear scan can require up to one million record comparisons per request; 50,000 worst-case requests could therefore require up to 50,000,000,000 comparisons/hour. A binary search requires about log₂(1,000,000) ≈ 20 levels in the worst case, after sorting. A hash index has expected constant-time lookup, but worst-case collisions and implementation/resource issues must be considered.
+
+**Recommended design:** persistent database with a unique constraint and an appropriate index; optionally maintain a cache/hash index for hot exact lookups. Apply daily inserts transactionally, update or rebuild indexes atomically, monitor cache/index freshness, and preserve a database fallback. Validate using concurrent load tests at average and peak rate, and report throughput, error rate, p50/p95/p99 latency, CPU, memory, and database utilization. The supplied microbenchmark does not prove production capacity because it omits networking, persistence, concurrency, and realistic skew.

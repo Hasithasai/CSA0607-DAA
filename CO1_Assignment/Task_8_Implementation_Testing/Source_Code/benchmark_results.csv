@@ -1,0 +1,13 @@
+n,algorithm,preprocessing_ms,lookup_ms,total_ms,queries,comparisons_or_calls,verified
+1000,Linear Search,0.000,4.114,4.114,1000,750564,true
+1000,Recursive Binary Search,0.473,0.575,1.048,1000,9567,true
+1000,Hash Table Search,0.328,0.365,0.693,1000,1000,true
+10000,Linear Search,0.000,7.010,7.010,1000,7581502,true
+10000,Recursive Binary Search,0.170,0.253,0.423,1000,13180,true
+10000,Hash Table Search,1.205,0.120,1.325,1000,1000,true
+100000,Linear Search,0.000,21.818,21.818,1000,75059620,true
+100000,Recursive Binary Search,2.171,0.165,2.336,1000,16351,true
+100000,Hash Table Search,15.446,0.170,15.616,1000,1000,true
+1000000,Linear Search,0.000,213.336,213.336,1000,752373291,true
+1000000,Recursive Binary Search,0.822,0.257,1.079,1000,19465,true
+1000000,Hash Table Search,75.431,0.419,75.851,1000,1000,true
