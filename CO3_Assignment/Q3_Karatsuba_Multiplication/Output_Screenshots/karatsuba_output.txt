@@ -1,0 +1,5 @@
+2 True {'leaf_products': 5}
+4 True {'leaf_products': 17}
+8 True {'leaf_products': 53}
+16 True {'leaf_products': 161}
+32 True {'leaf_products': 479}

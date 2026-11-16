@@ -1,0 +1,1 @@
+The CSV and graphs use mathematical operation-count / asymptotic proxies. They are not wall-clock timing measurements. Collect repeated timings on the same machine if your faculty expects empirical timing data. The executed output captures are saved per question.

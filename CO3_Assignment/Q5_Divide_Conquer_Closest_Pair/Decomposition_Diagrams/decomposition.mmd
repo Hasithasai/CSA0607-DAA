@@ -1,0 +1,7 @@
+flowchart TD
+A[Points sorted by x]-->B[Split at median]
+B-->C[Closest left]
+B-->D[Closest right]
+C-->E[Build strip using min distance]
+D-->E
+E-->F[Bounded y-neighbour checks]

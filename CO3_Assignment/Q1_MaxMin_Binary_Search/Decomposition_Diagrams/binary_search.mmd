@@ -1,0 +1,7 @@
+flowchart TD
+A[Sorted interval]-->B[Compare middle element]
+B-->|equal|C[Return index]
+B-->|target smaller|D[Discard right half]
+B-->|target larger|E[Discard left half]
+D-->F[Repeat on remaining interval]
+E-->F
