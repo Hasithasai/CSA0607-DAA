@@ -1,0 +1,5 @@
+1. Set comparison_count to zero.
+2. Visit records from the first position to the last.
+3. For each record, increment comparison_count.
+4. If its Tool ID equals the requested ID, return the record, position and count.
+5. If the scan finishes, return NOT FOUND and the total count.

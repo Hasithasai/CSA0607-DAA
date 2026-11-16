@@ -1,0 +1,5 @@
+Q4 BRUTE-FORCE CLOSEST PAIR
+n=  10 unique_pairs=      45 expected=      45 distance_calculations=      45 time_ms=0.015 closest_distance=66.7084
+n= 100 unique_pairs=    4950 expected=    4950 distance_calculations=    4950 time_ms=0.639 closest_distance=14.4555
+n= 500 unique_pairs=  124750 expected=  124750 distance_calculations=  124750 time_ms=17.901 closest_distance=1.6522
+n=1000 unique_pairs=  499500 expected=  499500 distance_calculations=  499500 time_ms=70.481 closest_distance=0.7139

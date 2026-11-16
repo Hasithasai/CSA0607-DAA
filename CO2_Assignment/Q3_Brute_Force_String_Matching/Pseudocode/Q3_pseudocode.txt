@@ -1,0 +1,8 @@
+1. Let n be the text length and m the pattern length; initialize comparison count and match list.
+2. For every legal shift s from 0 to n-m:
+   a. Set j=0.
+   b. While j<m, count a character comparison.
+   c. If text[s+j] differs from pattern[j], stop this alignment.
+   d. Otherwise increment j.
+   e. If j=m, record s as a match.
+3. Return all match positions and the character-comparison count.

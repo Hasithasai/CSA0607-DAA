@@ -1,0 +1,10 @@
+1. Remove duplicate coordinate pairs.
+2. For every unordered pair of distinct points A and B:
+   a. Treat AB as a candidate line.
+   b. Evaluate the cross product (B-A) x (P-A) for every other point P.
+   c. Record whether any point is strictly on the positive side and whether any is strictly on the negative side.
+   d. If points occur on both sides, reject AB.
+   e. Otherwise accept AB as a supporting boundary segment (collinear points may lie on the line).
+3. Collect endpoints of accepted edges.
+4. Order the boundary vertices around the perimeter for display.
+5. Return the hull and operation count.

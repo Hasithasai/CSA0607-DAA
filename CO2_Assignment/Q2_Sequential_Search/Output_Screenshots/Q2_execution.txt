@@ -1,0 +1,13 @@
+Q2 SEQUENTIAL SEARCH
+n=  10 case=first  target=T-0000     comparisons=   1 result=FOUND
+n=  10 case=middle target=T-0005     comparisons=   6 result=FOUND
+n=  10 case=last   target=T-0009     comparisons=  10 result=FOUND
+n=  10 case=missing target=T-MISSING  comparisons=  10 result=NOT FOUND
+n= 100 case=first  target=T-0000     comparisons=   1 result=FOUND
+n= 100 case=middle target=T-0050     comparisons=  51 result=FOUND
+n= 100 case=last   target=T-0099     comparisons= 100 result=FOUND
+n= 100 case=missing target=T-MISSING  comparisons= 100 result=NOT FOUND
+n=1000 case=first  target=T-0000     comparisons=   1 result=FOUND
+n=1000 case=middle target=T-0500     comparisons= 501 result=FOUND
+n=1000 case=last   target=T-0999     comparisons=1000 result=FOUND
+n=1000 case=missing target=T-MISSING  comparisons=1000 result=NOT FOUND

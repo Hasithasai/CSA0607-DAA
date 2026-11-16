@@ -1,0 +1,6 @@
+Q6 EXHAUSTIVE SEARCH (0/1 KNAPSACK)
+n= 8 candidates=     256 feasible=     109 best_value=  77 weight= 29 time_ms=0.132
+n=12 candidates=    4096 feasible=     628 best_value= 103 weight= 30 time_ms=3.146
+n=16 candidates=   65536 feasible=    1599 best_value= 103 weight= 30 time_ms=66.027
+n=20 candidates= 1048576 feasible=    4792 best_value= 113 weight= 30 time_ms=1260.678
+Manual-check instance: ([2, 4], 8, 12) capacity=8

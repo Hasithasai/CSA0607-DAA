@@ -1,0 +1,4 @@
+Q3 BRUTE-FORCE STRING MATCHING
+Early mismatch: n=26 m=3 matches=[] character_comparisons=24
+Repeated-prefix worst case: n=31 m=15 matches=[] character_comparisons=255
+Multiple matches: n=12 m=4 matches=[0, 2, 4, 6, 8] character_comparisons=24

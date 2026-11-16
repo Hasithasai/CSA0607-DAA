@@ -1,0 +1,7 @@
+1. Let n be the number of packages; enumerate every n-bit mask from 0 through 2^n-1.
+2. Interpret bit i as whether package i is selected.
+3. For each mask, initialize total weight and total humanitarian value to zero.
+4. Add the weight and value of every selected package.
+5. If total weight is within capacity, compare its value with the best value so far.
+6. If it is better, save the value, weight and selected package set.
+7. After all 2^n subsets have been checked, return the best feasible subset.

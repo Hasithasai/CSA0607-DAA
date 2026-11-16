@@ -1,0 +1,22 @@
+SELECTION SORT
+1. Copy the input list.
+2. For each position i from 0 to n-2, assume i is the minimum position.
+3. Scan positions i+1 through n-1; count each comparison and update the minimum index.
+4. If the minimum is not i, exchange the two values and count one swap.
+5. Return the sorted list and counters.
+
+OPTIMIZED BUBBLE SORT
+1. Copy the input list.
+2. Compare adjacent elements in the unsorted prefix and exchange them if out of order.
+3. Count comparisons and swaps.
+4. After each pass, shrink the unsorted prefix.
+5. If a complete pass makes no swap, stop early.
+6. Return the list and counters.
+
+INSERTION SORT
+1. Copy the input list.
+2. Starting at index 1, store the current value as key.
+3. Move larger preceding values one position right, counting comparisons and movements.
+4. Insert key in the gap.
+5. Repeat until all values have been processed.
+6. Return the list and counters.

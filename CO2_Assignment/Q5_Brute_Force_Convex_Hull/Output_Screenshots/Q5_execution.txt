@@ -1,0 +1,4 @@
+Q5 BRUTE-FORCE CONVEX HULL
+Interior points: points=7 hull_vertices=[(0, 0), (4, 0), (4, 4), (0, 4)] accepted_candidate_edges=4 side_tests=63
+Collinear challenge: points=8 hull_vertices=[(0, 0), (3, 0), (3, 3), (0, 3)] accepted_candidate_edges=4 side_tests=104
+Triangle plus interior: points=6 hull_vertices=[(0, 0), (6, 0), (3, 5)] accepted_candidate_edges=3 side_tests=37

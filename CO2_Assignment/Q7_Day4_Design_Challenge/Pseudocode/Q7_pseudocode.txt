@@ -1,0 +1,13 @@
+ORIGINAL EXHAUSTIVE METHOD
+1. Enumerate all 2^n subsets.
+2. Compute each subset's weight and value from its selected items.
+3. Retain the highest-value subset whose weight is within capacity.
+
+REDESIGNED DYNAMIC-PROGRAMMING METHOD
+1. Create an array dp[0..W], initialized to zero. dp[c] represents the best value obtainable with capacity at most c using items processed so far.
+2. For each package (weight w, value v):
+   a. Iterate capacity c downward from W to w.
+   b. Compute candidate = dp[c-w] + v.
+   c. If candidate exceeds dp[c], replace dp[c] with candidate.
+3. Return dp[W].
+Descending capacity ensures each package is used at most once.

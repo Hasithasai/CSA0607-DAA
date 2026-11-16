@@ -1,0 +1,8 @@
+1. Initialize the minimum squared distance to infinity and best pair to none.
+2. For each point index i from 0 to n-1:
+   For each index j from i+1 to n-1:
+      a. Compute squared Euclidean distance between points[i] and points[j].
+      b. Increment the unique-pair and distance-calculation counters.
+      c. If this distance is smaller than the current minimum, save the distance and pair.
+3. Return the saved pair, its square-root distance and counters.
+The condition j > i ensures each unordered pair is examined exactly once.

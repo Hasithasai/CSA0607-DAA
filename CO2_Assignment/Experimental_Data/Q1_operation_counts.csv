@@ -1,0 +1,4 @@
+dataset,selection_comparisons,bubble_comparisons,bubble_swaps,insertion_comparisons,insertion_moves
+Nearly sorted,45,17,1,10,10
+Reverse,45,45,45,45,54
+All equal,45,9,0,9,9

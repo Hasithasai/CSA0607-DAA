@@ -1,0 +1,4 @@
+Q7 DAY-4 DESIGN CHALLENGE: EXHAUSTIVE SEARCH vs DYNAMIC PROGRAMMING
+n=10 exhaustive_subsets=    1024 DP_state_updates=   535 values=145/145 times_ms=0.815/0.034 verified=True
+n=15 exhaustive_subsets=   32768 DP_state_updates=   800 values=180/180 times_ms=45.887/0.087 verified=True
+n=20 exhaustive_subsets= 1048576 DP_state_updates=  1072 values=216/216 times_ms=1791.729/0.074 verified=True

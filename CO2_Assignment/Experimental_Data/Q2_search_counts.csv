@@ -1,0 +1,13 @@
+n,case,comparisons
+10,first,1
+10,middle,6
+10,last,10
+10,missing,10
+100,first,1
+100,middle,51
+100,last,100
+100,missing,100
+1000,first,1
+1000,middle,501
+1000,last,1000
+1000,missing,1000
