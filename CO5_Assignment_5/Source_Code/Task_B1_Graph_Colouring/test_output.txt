@@ -1,0 +1,41 @@
+Test                                  Order   Expected  Got     Proper?  Pass
+Colourable: C5, k=3                   input   True      True    True     PASS
+Colourable: C5, k=3                   dsatur  True      True    True     PASS
+Colourable: Petersen, k=3             input   True      True    True     PASS
+Colourable: Petersen, k=3             dsatur  True      True    True     PASS
+Uncolourable: K4, k=3                 input   False     False   -        PASS
+Uncolourable: K4, k=3                 dsatur  False     False   -        PASS
+Uncolourable: C5, k=2                 input   False     False   -        PASS
+Uncolourable: C5, k=2                 dsatur  False     False   -        PASS
+Uncolourable: Grotzsch, k=3           input   False     False   -        PASS
+Uncolourable: Grotzsch, k=3           dsatur  False     False   -        PASS
+Boundary: empty graph (n=0), k=0      input   True      True    True     PASS
+Boundary: empty graph (n=0), k=0      dsatur  True      True    True     PASS
+Boundary: single vertex, k=0          input   False     False   -        PASS
+Boundary: single vertex, k=0          dsatur  False     False   -        PASS
+Boundary: single vertex, k=1          input   True      True    True     PASS
+Boundary: single vertex, k=1          dsatur  True      True    True     PASS
+Boundary: 1 edge, k=1                 input   False     False   -        PASS
+Boundary: 1 edge, k=1                 dsatur  False     False   -        PASS
+Boundary: 6 isolated vertices, k=1    input   True      True    True     PASS
+Boundary: 6 isolated vertices, k=1    dsatur  True      True    True     PASS
+Boundary: K5, k=5 (k = n)             input   True      True    True     PASS
+Boundary: K5, k=5 (k = n)             dsatur  True      True    True     PASS
+Boundary: duplicate edges             input   True      True    True     PASS
+Boundary: duplicate edges             dsatur  True      True    True     PASS
+
+- Colourable: C5, k=3: odd cycle needs 3 colours; checks normal success path + valid colouring
+- Colourable: Petersen, k=3: non-trivial 3-chromatic graph; success needs real backtracking
+- Uncolourable: K4, k=3: clique larger than k; must exhaust search and report failure
+- Uncolourable: C5, k=2: odd cycle is not bipartite; failure only after backtracking
+- Uncolourable: Grotzsch, k=3: triangle-free yet chi=4: failure NOT explained by a clique
+- Boundary: empty graph (n=0), k=0: no vertices -> trivially colourable, empty colouring
+- Boundary: single vertex, k=0: a vertex but no colours -> must fail
+- Boundary: single vertex, k=1: smallest non-trivial success
+- Boundary: 1 edge, k=1: k=1 cannot colour any edge
+- Boundary: 6 isolated vertices, k=1: no edges -> one colour suffices, zero rejections expected
+- Boundary: K5, k=5 (k = n): k equals chromatic number exactly; tight success
+- Boundary: duplicate edges: duplicate edges must not break feasibility
+
+Randomised cross-check vs brute force: 600 runs, 0 mismatches
+ALL TESTS PASSED

@@ -1,0 +1,1 @@
+n=28: exact branch & bound NOT finished after 60 s (greedy FFD answers in < 1 ms)

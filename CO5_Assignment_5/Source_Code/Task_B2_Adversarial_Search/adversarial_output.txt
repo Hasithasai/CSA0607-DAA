@@ -1,0 +1,20 @@
+Edges A: [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3), (4, 5), (6, 7), (8, 9), (10, 11), (12, 13)]
+Edges B: [(0, 1), (2, 3), (4, 5), (6, 7), (8, 9), (10, 11), (10, 12), (10, 13), (11, 12), (11, 13), (12, 13)]
+
+Graph A (K4 first): n=14, |E|=11, k=3
+   Version 1 (input order)    result=NOT colourable  nodes=      16 backtracks=      15 rejected=      33 attempts=      48 max_depth=3
+   Version 2 (DSATUR order)   result=NOT colourable  nodes=      16 backtracks=      15 rejected=      33 attempts=      48 max_depth=3
+
+Graph B (K4 last): n=14, |E|=11, k=3
+   Version 1 (input order)    result=NOT colourable  nodes=  130636 backtracks=  130635 rejected=  261273 attempts=  391908 max_depth=13
+   Version 2 (DSATUR order)   result=NOT colourable  nodes=      16 backtracks=      15 rejected=      33 attempts=      48 max_depth=3
+
+Growth of Version-1 effort for Graph B as the filler grows (k=3, K4 last):
+ filler edges    n    nodes (V1)    nodes (V2)
+            1    6           100            16
+            2    8           604            16
+            3   10          3628            16
+            4   12         21772            16
+            5   14        130636            16
+            6   16        783820            16
+            7   18       4702924            16

@@ -1,0 +1,48 @@
+==============================================================================
+B3.1  CORRECTNESS ON SMALL INSTANCES (zones numbered 1..m in the printout)
+==============================================================================
+Inst  zones centres  Exact(brute)  Exact(B&B)  Greedy  Same?
+1         6       5             2           2       2    YES
+2        10       8             6           6       6    YES
+3        12       9             5           5       5    YES
+4        14      10             6           6       6    YES
+5        15      11             5           5       5    YES
+
+Instance 1 centres: ['{1,2,3}', '{4,5,6}', '{1,4}', '{2,5}', '{3,6}']
+
+==============================================================================
+B3.2  COUNTEREXAMPLE FOR GREEDY
+==============================================================================
+  S0 = {1,2,3,4,5,6}
+  S1 = {7,8,9,10,11,12}
+  S2 = {1,2,3,4,7,8,9,10}
+  S3 = {5,6}
+  S4 = {11,12}
+Exact optimum : ['S0', 'S1'] size 2
+Greedy picks  : ['S2', 'S0', 'S1'] size 3
+   step 1: choose S2 (covers 8 new zones) -> 4 zones still uncovered
+   step 2: choose S0 (covers 2 new zones) -> 2 zones still uncovered
+   step 3: choose S1 (covers 2 new zones) -> 0 zones still uncovered
+
+==============================================================================
+B3.3  SCALABILITY
+==============================================================================
+Exact effort = states visited by branch&bound (and #combinations a plain brute-force would test up to the optimum size)
+Greedy effort = number of centre-gain evaluations
+ zones centres  Exact B&B states  Brute-force combos  Greedy evals  Exact  Greedy    B&B s  Greedy s
+----------------------------------------------------------------------------------------------------
+    12      10                 9                 847            60      6       6   0.0000   0.00002
+    20      15                12               27823           135      9       9   0.0001   0.00003
+    30      20                25              910595           240     12      12   0.0001   0.00005
+    40      28                20            24821332           308     10      11   0.0002   0.00008
+    50      35              2667           703680423           420     11      12   0.0051   0.00012
+    60      42              3329          2068564063           462     10      11   0.0055   0.00017
+    80      60            380987        435878172348           720     11      12   0.6865   0.00025
+
+Doubling test: brute-force combinations needed as #centres grows (optimum size 6 assumed):
+  n= 20  sum_(j<=6) C(n,j) = 60,459
+  n= 30  sum_(j<=6) C(n,j) = 768,211
+  n= 40  sum_(j<=6) C(n,j) = 4,598,478
+  n= 60  sum_(j<=6) C(n,j) = 56,049,057
+  n= 80  sum_(j<=6) C(n,j) = 326,207,196
+  n=100  sum_(j<=6) C(n,j) = 1,271,427,895

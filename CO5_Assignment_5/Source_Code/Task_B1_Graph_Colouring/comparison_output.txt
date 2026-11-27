@@ -1,0 +1,30 @@
+Instance                  V  Result      Nodes  Attempts  Rejected  Backtr. MaxDep
+----------------------------------------------------------------------------------
+C5, k=3                   1  colour          6         9         4        0      5
+C5, k=3                   2  colour          6         9         4        0      5
+
+Petersen, k=3             1  colour         11        20        10        0     10
+Petersen, k=3             2  colour         11        20        10        0     10
+
+Grotzsch, k=3 (no sol.)   1  none          472      1416       945      471     10
+Grotzsch, k=3 (no sol.)   2  none          154       462       309      153     10
+
+Queen5x5, k=5             1  colour         30        95        66        4     25
+Queen5x5, k=5             2  colour         26        75        50        0     25
+
+Queen5x5, k=4 (no sol.)   1  none           65       260       196       64      4
+Queen5x5, k=4 (no sol.)   2  none           65       260       196       64      4
+
+Random G(18,.35), k=4     1  none        53997    215988    161992    53996     16
+Random G(18,.35), k=4     2  none          401      1604      1204      400     13
+
+Random G(22,.30), k=3     1  none          445      1335       891      444     13
+Random G(22,.30), k=3     2  none           34       102        69       33      6
+
+Random G(25,.25), k=3     1  none        17752     53256     35505    17751     19
+Random G(25,.25), k=3     2  none           70       210       141       69     12
+
+Example final colouring (Petersen, k=3, Version 2):
+[0, 1, 0, 1, 2, 1, 0, 2, 2, 1]
+Example final colouring (Petersen, k=3, Version 1):
+[0, 1, 0, 1, 2, 1, 0, 2, 2, 1]

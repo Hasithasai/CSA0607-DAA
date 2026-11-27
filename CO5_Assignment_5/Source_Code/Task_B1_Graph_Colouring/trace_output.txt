@@ -1,0 +1,23 @@
+Graph edges (S1..S5): [('S1', 'S2'), ('S1', 'S3'), ('S1', 'S4'), ('S1', 'S5'), ('S2', 'S5'), ('S3', 'S4'), ('S4', 'S5')]  k = 3
+ 1. CHOOSE S1=0  CHECK ok  -> ACCEPT, EXPLORE
+ 2.   CHOOSE S2=0  CHECK conflict with S1  -> REJECT (prune)
+ 3.   CHOOSE S2=1  CHECK ok  -> ACCEPT, EXPLORE
+ 4.     CHOOSE S3=0  CHECK conflict with S1  -> REJECT (prune)
+ 5.     CHOOSE S3=1  CHECK ok  -> ACCEPT, EXPLORE
+ 6.       CHOOSE S4=0  CHECK conflict with S1  -> REJECT (prune)
+ 7.       CHOOSE S4=1  CHECK conflict with S3  -> REJECT (prune)
+ 8.       CHOOSE S4=2  CHECK ok  -> ACCEPT, EXPLORE
+ 9.         CHOOSE S5=0  CHECK conflict with S1  -> REJECT (prune)
+10.         CHOOSE S5=1  CHECK conflict with S2  -> REJECT (prune)
+11.         CHOOSE S5=2  CHECK conflict with S4  -> REJECT (prune)
+12.         no colour left for S5 -> FAIL upward
+13.       BACKTRACK: undo S4=2
+14.       no colour left for S4 -> FAIL upward
+15.     BACKTRACK: undo S3=1
+16.     CHOOSE S3=2  CHECK ok  -> ACCEPT, EXPLORE
+17.       CHOOSE S4=0  CHECK conflict with S1  -> REJECT (prune)
+18.       CHOOSE S4=1  CHECK ok  -> ACCEPT, EXPLORE
+19.         CHOOSE S5=0  CHECK conflict with S1  -> REJECT (prune)
+20.         CHOOSE S5=1  CHECK conflict with S2  -> REJECT (prune)
+21.         CHOOSE S5=2  CHECK ok  -> ACCEPT, EXPLORE
+22.           GOAL: all vertices coloured -> SUCCESS
