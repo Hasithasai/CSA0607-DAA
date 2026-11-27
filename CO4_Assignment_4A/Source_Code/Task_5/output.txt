@@ -1,0 +1,50 @@
+=== 5.1 Dijkstra from A ===
+  finalise A (dist=0)
+     relax A->B (w=4): dist[B]=4, pred[B]=A
+     relax A->C (w=7): dist[C]=7, pred[C]=A
+  finalise B (dist=4)
+     relax B->C (w=2): dist[C]=6, pred[C]=B
+     relax B->D (w=6): dist[D]=10, pred[D]=B
+  finalise C (dist=6)
+     relax C->D (w=1): dist[D]=7, pred[D]=C
+     relax C->E (w=8): dist[E]=14, pred[E]=C
+  finalise D (dist=7)
+     relax D->E (w=3): dist[E]=10, pred[E]=D
+  finalise E (dist=10)
+  A: dist=0 path=A
+  B: dist=4 path=A->B
+  C: dist=6 path=A->B->C
+  D: dist=7 path=A->B->C->D
+  E: dist=10 path=A->B->C->D->E
+
+=== 5.2 Bellman-Ford on the same graph ===
+  pass 1: {'A': 0, 'B': 4, 'C': 6, 'D': 7, 'E': 10}
+  pass 2: {'A': 0, 'B': 4, 'C': 6, 'D': 7, 'E': 10}
+  final: {'A': 0, 'B': 4, 'C': 6, 'D': 7, 'E': 10} | negative cycle: False
+
+--- Negative edge where Dijkstra is unsafe: A->B 3, A->C 5, C->B -4, B->D 1 ---
+  finalise A (dist=0)
+     relax A->B (w=3): dist[B]=3, pred[B]=A
+     relax A->C (w=5): dist[C]=5, pred[C]=A
+  finalise B (dist=3)
+     relax B->D (w=1): dist[D]=4, pred[D]=B
+  finalise D (dist=4)
+  finalise C (dist=5)
+  Dijkstra   : {'A': 0, 'B': 3, 'C': 5, 'D': 4}
+  pass 1: {'A': 0, 'B': 1, 'C': 5, 'D': 2}
+  pass 2: {'A': 0, 'B': 1, 'C': 5, 'D': 2}
+  Bellman-Ford: {'A': 0, 'B': 1, 'C': 5, 'D': 2} | negative cycle: False
+
+--- Negative cycle: A->B 1, B->C -2, C->B 1 ---
+  pass 1: {'A': 0, 'B': 0, 'C': -1}
+  pass 2: {'A': 0, 'B': -1, 'C': -2}
+  negative cycle detected: True
+
+=== 5.3 Floyd-Warshall all pairs ===
+         A    B    C    D    E
+  A:     0    4    6    7   10
+  B:   INF    0    2    3    6
+  C:   INF  INF    0    1    4
+  D:   INF  INF  INF    0    3
+  E:   INF  INF  INF  INF    0
+All Task 5 tests passed.

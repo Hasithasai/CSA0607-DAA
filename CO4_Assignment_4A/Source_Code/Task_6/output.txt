@@ -1,0 +1,31 @@
+=== Given dataset (DP) ===
+ k  job   s   f    v  p(k)  excl  incl   OPT  decision
+ 1   J1   1   3   20     0     0    20    20  INCLUDE
+ 2   J2   2   5   50     0    20    50    50  INCLUDE
+ 3   J3   4   6   30     1    50    50    50  exclude
+ 4   J4   6   8   40     3    50    90    90  INCLUDE
+ 5   J5   5   9   60     2    90   110   110  INCLUDE
+ 6   J6   8  10   30     4   110   120   120  INCLUDE
+ 7   J7   9  11   50     5   120   160   160  INCLUDE
+ 8   J8  11  13   40     7   160   200   200  INCLUDE
+Selected: ['J2', 'J5', 'J7', 'J8'] | total energy saving = 200
+Greedy (highest value): (200, ['J5', 'J2', 'J7', 'J8'])
+Greedy (earliest finish): (160, ['J1', 'J3', 'J4', 'J6', 'J8'])
+
+=== Adversarial dataset (Stage 6) ===
+Greedy (highest value):   (90, ['S6'])
+Greedy (earliest finish): (90, ['S1', 'S3', 'S4'])
+ k  job   s   f    v  p(k)  excl  incl   OPT  decision
+ 1   S1   4   5   20     0     0    20    20  INCLUDE
+ 2   S2   4   9   40     0    20    40    40  INCLUDE
+ 3   S3   9  10   60     2    40   100   100  INCLUDE
+ 4   S4  11  12   10     3   100   110   110  INCLUDE
+ 5   S5   4  12   30     0   110    30   110  exclude
+ 6   S6   3  12   90     0   110    90   110  exclude
+DP selected: ['S2', 'S3', 'S4'] | total = 110 | brute force = 110
+
+=== Touching intervals & ties ===
+Chain of touching jobs -> 15 ['T1', 'T2', 'T3']
+Identical overlapping jobs -> 10 ['U1']
+
+All Task 6 tests passed.

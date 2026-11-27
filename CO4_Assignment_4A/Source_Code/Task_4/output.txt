@@ -1,0 +1,111 @@
+
+Text='abcd', Dictionary=['cd']
+ Original:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ab' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='b' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='abc' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='bc' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='c' in dict=False dp[j]=False -> False
+   i=4 j=0 substring='abcd' in dict=False dp[j]=True -> False
+   i=4 j=1 substring='bcd' in dict=False dp[j]=False -> False
+   i=4 j=2 substring='cd' in dict=True dp[j]=False -> True
+  dp = [True, False, False, False, True] -> True
+ Repaired:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ab' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='b' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='abc' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='bc' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='c' in dict=False dp[j]=False -> False
+   i=4 j=0 substring='abcd' in dict=False dp[j]=True -> False
+   i=4 j=1 substring='bcd' in dict=False dp[j]=False -> False
+   i=4 j=2 substring='cd' in dict=True dp[j]=False -> False
+   i=4 j=3 substring='d' in dict=False dp[j]=False -> False
+  dp = [True, False, False, False, False] -> False
+
+Text='applepie', Dictionary=['apple', 'pie']
+ Original:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ap' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='p' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='app' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='pp' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='p' in dict=False dp[j]=False -> False
+   i=4 j=0 substring='appl' in dict=False dp[j]=True -> False
+   i=4 j=1 substring='ppl' in dict=False dp[j]=False -> False
+   i=4 j=2 substring='pl' in dict=False dp[j]=False -> False
+   i=4 j=3 substring='l' in dict=False dp[j]=False -> False
+   i=5 j=0 substring='apple' in dict=True dp[j]=True -> True
+   i=6 j=0 substring='applep' in dict=False dp[j]=True -> False
+   i=6 j=1 substring='pplep' in dict=False dp[j]=False -> False
+   i=6 j=2 substring='plep' in dict=False dp[j]=False -> False
+   i=6 j=3 substring='lep' in dict=False dp[j]=False -> False
+   i=6 j=4 substring='ep' in dict=False dp[j]=False -> False
+   i=6 j=5 substring='p' in dict=False dp[j]=True -> False
+   i=7 j=0 substring='applepi' in dict=False dp[j]=True -> False
+   i=7 j=1 substring='pplepi' in dict=False dp[j]=False -> False
+   i=7 j=2 substring='plepi' in dict=False dp[j]=False -> False
+   i=7 j=3 substring='lepi' in dict=False dp[j]=False -> False
+   i=7 j=4 substring='epi' in dict=False dp[j]=False -> False
+   i=7 j=5 substring='pi' in dict=False dp[j]=True -> False
+   i=7 j=6 substring='i' in dict=False dp[j]=False -> False
+   i=8 j=0 substring='applepie' in dict=False dp[j]=True -> False
+   i=8 j=1 substring='pplepie' in dict=False dp[j]=False -> False
+   i=8 j=2 substring='plepie' in dict=False dp[j]=False -> False
+   i=8 j=3 substring='lepie' in dict=False dp[j]=False -> False
+   i=8 j=4 substring='epie' in dict=False dp[j]=False -> False
+   i=8 j=5 substring='pie' in dict=True dp[j]=True -> True
+  dp = [True, False, False, False, False, True, False, False, True] -> True
+ Repaired:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ap' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='p' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='app' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='pp' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='p' in dict=False dp[j]=False -> False
+   i=4 j=0 substring='appl' in dict=False dp[j]=True -> False
+   i=4 j=1 substring='ppl' in dict=False dp[j]=False -> False
+   i=4 j=2 substring='pl' in dict=False dp[j]=False -> False
+   i=4 j=3 substring='l' in dict=False dp[j]=False -> False
+   i=5 j=0 substring='apple' in dict=True dp[j]=True -> True
+   i=6 j=0 substring='applep' in dict=False dp[j]=True -> False
+   i=6 j=1 substring='pplep' in dict=False dp[j]=False -> False
+   i=6 j=2 substring='plep' in dict=False dp[j]=False -> False
+   i=6 j=3 substring='lep' in dict=False dp[j]=False -> False
+   i=6 j=4 substring='ep' in dict=False dp[j]=False -> False
+   i=6 j=5 substring='p' in dict=False dp[j]=True -> False
+   i=7 j=0 substring='applepi' in dict=False dp[j]=True -> False
+   i=7 j=1 substring='pplepi' in dict=False dp[j]=False -> False
+   i=7 j=2 substring='plepi' in dict=False dp[j]=False -> False
+   i=7 j=3 substring='lepi' in dict=False dp[j]=False -> False
+   i=7 j=4 substring='epi' in dict=False dp[j]=False -> False
+   i=7 j=5 substring='pi' in dict=False dp[j]=True -> False
+   i=7 j=6 substring='i' in dict=False dp[j]=False -> False
+   i=8 j=0 substring='applepie' in dict=False dp[j]=True -> False
+   i=8 j=1 substring='pplepie' in dict=False dp[j]=False -> False
+   i=8 j=2 substring='plepie' in dict=False dp[j]=False -> False
+   i=8 j=3 substring='lepie' in dict=False dp[j]=False -> False
+   i=8 j=4 substring='epie' in dict=False dp[j]=False -> False
+   i=8 j=5 substring='pie' in dict=True dp[j]=True -> True
+  dp = [True, False, False, False, False, True, False, False, True] -> True
+
+Text='abc', Dictionary=['x']
+ Original:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ab' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='b' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='abc' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='bc' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='c' in dict=False dp[j]=False -> False
+  dp = [True, False, False, False] -> False
+ Repaired:
+   i=1 j=0 substring='a' in dict=False dp[j]=True -> False
+   i=2 j=0 substring='ab' in dict=False dp[j]=True -> False
+   i=2 j=1 substring='b' in dict=False dp[j]=False -> False
+   i=3 j=0 substring='abc' in dict=False dp[j]=True -> False
+   i=3 j=1 substring='bc' in dict=False dp[j]=False -> False
+   i=3 j=2 substring='c' in dict=False dp[j]=False -> False
+  dp = [True, False, False, False] -> False
+
+All Task 4 tests passed.

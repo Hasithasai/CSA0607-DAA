@@ -1,0 +1,29 @@
+
+=== Main test ===
+Capacity = 50
+Order by value/weight: [('P1', 6.0), ('P2', 5.0), ('P3', 4.0)]
+  take P1: fraction=1.000 weight=10.0 gain=60.0 remaining=40.0
+  take P2: fraction=1.000 weight=20.0 gain=100.0 remaining=20.0
+  take P3: fraction=0.667 weight=20.0 gain=80.0 remaining=0.0
+Total value = 240.00, unused capacity = 0.0
+
+=== Capacity 0 ===
+Capacity = 0
+Order by value/weight: [('P1', 6.0), ('P2', 5.0), ('P3', 4.0)]
+Total value = 0.00, unused capacity = 0.0
+
+=== Capacity exceeds total weight ===
+Capacity = 100
+Order by value/weight: [('P1', 6.0), ('P2', 5.0), ('P3', 4.0)]
+  take P1: fraction=1.000 weight=10.0 gain=60.0 remaining=90.0
+  take P2: fraction=1.000 weight=20.0 gain=100.0 remaining=70.0
+  take P3: fraction=1.000 weight=30.0 gain=120.0 remaining=40.0
+Total value = 280.00, unused capacity = 40.0
+
+=== Single package, fractional ===
+Capacity = 2
+Order by value/weight: [('X', 5.0)]
+  take X: fraction=0.250 weight=2.0 gain=10.0 remaining=0.0
+Total value = 10.00, unused capacity = 0.0
+
+All Task 1 tests passed.

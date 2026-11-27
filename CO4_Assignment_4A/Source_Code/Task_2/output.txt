@@ -1,0 +1,26 @@
+=== Desk-check instance ===
+Order by profit: [('A', 80), ('C', 60), ('D', 40), ('B', 35), ('E', 25)] | max deadline = 3
+  A(d=2,p=80): placed in slot 2 -> slots=[None, 'A', None] profit=80
+  C(d=2,p=60): placed in slot 1 -> slots=['C', 'A', None] profit=140
+  D(d=3,p=40): placed in slot 3 -> slots=['C', 'A', 'D'] profit=180
+  B(d=1,p=35): no free slot <= 1, REJECTED -> slots=['C', 'A', 'D'] profit=180
+  E(d=1,p=25): no free slot <= 1, REJECTED -> slots=['C', 'A', 'D'] profit=180
+Schedule: ['C', 'A', 'D'] Total profit: 180
+
+=== Challenge: profit of B changed 35 -> 90 ===
+Order by profit: [('B', 90), ('A', 80), ('C', 60), ('D', 40), ('E', 25)] | max deadline = 3
+  B(d=1,p=90): placed in slot 1 -> slots=['B', None, None] profit=90
+  A(d=2,p=80): placed in slot 2 -> slots=['B', 'A', None] profit=170
+  C(d=2,p=60): no free slot <= 2, REJECTED -> slots=['B', 'A', None] profit=170
+  D(d=3,p=40): placed in slot 3 -> slots=['B', 'A', 'D'] profit=210
+  E(d=1,p=25): no free slot <= 1, REJECTED -> slots=['B', 'A', 'D'] profit=210
+Schedule: ['B', 'A', 'D'] Total profit: 210
+
+=== Boundary: all jobs have deadline 1 ===
+Order by profit: [('Y', 50), ('Z', 30), ('X', 10)] | max deadline = 1
+  Y(d=1,p=50): placed in slot 1 -> slots=['Y'] profit=50
+  Z(d=1,p=30): no free slot <= 1, REJECTED -> slots=['Y'] profit=50
+  X(d=1,p=10): no free slot <= 1, REJECTED -> slots=['Y'] profit=50
+Schedule: ['Y'] Total profit: 50
+
+All Task 2 tests passed.
